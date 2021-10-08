@@ -1,0 +1,118 @@
+$pale-blue: hsl(243, 100%, 93%);
+$grayish-blue: hsl(229, 7%, 55%);
+$dark-blue: hsl(228, 56%, 26%);
+$v-dark-blue: hsl(229, 57%, 11%);
+
+.info-container {  
+    background-color: $dark-blue;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2.5rem 2.5rem;
+    border-radius: 10px;
+    position:relative;
+
+    .tittle {
+        font-size: 14px;
+        color: $grayish-blue;
+        font-weight: 400;
+        text-align: center;
+        
+        span {
+            color: $pale-blue;
+            font-weight: 700;
+        }
+    }
+
+    .loading-bar {
+        height: 1rem;
+        border-radius: 10px;
+        background-color: $v-dark-blue;
+        opacity: .6;
+        width: 100%;
+        position: relative;
+
+        .gradient-bar{
+            height: 1rem;
+            border-radius: 10px;
+            background:linear-gradient(to right, hsl(6, 100%, 80%),hsl(335, 100%, 65%));
+            width: 75%;
+
+            &::after {
+                position: absolute;
+                top: 1.5px;
+                right: 26%;
+                content: "";
+                height: .8rem;
+                width: .8rem;
+                background: white;
+                border-radius: 5px;
+            }
+        }
+   }
+
+   .bar-endpoints{
+       display: flex;
+       justify-content: space-between;
+       @extend .tittle;
+       opacity: .8;
+   }
+
+    .storage-info{
+       position: absolute;
+       bottom: -25%;
+       left:25%;
+       background-color: $pale-blue;
+       border-radius: 8px;
+       font-weight: 700;
+       width: 50%;
+       color: $v-dark-blue;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       gap: .5rem;
+       padding: 1rem;
+
+       p {
+        opacity: .5;
+        font-size: 12px;
+       }
+     }
+}
+
+// desktop form 
+@media screen and (min-width:1024px){
+    
+    .info-container {
+        gap: 1rem;
+        padding: 2.5rem 2.5rem;
+        height: 75%;
+        align-self:flex-end;
+        transition: transform .5s;
+
+        .tittle {
+            text-align: left;
+        }
+
+        .storage-info {
+            bottom: 85%;
+            left: 60%;
+            width: 30%;
+
+            &::after{
+                position: absolute;
+                right: 0;
+                bottom: -30%;
+                content:"";
+                background:$pale-blue;
+                height: 2rem;
+                width: 2rem;
+                clip-path: polygon(100% 0, 100% 100%, 100% 100%, 10% 10%);
+            }
+            }
+
+            &:hover {
+                transform:scale(1.03);
+            }
+    }
+ }

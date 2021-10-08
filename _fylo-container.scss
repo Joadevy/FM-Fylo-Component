@@ -1,0 +1,42 @@
+
+// Neutral
+$pale-blue: hsl(243, 100%, 93%);
+$grayish-blue: hsl(229, 7%, 55%);
+$dark-blue: hsl(228, 56%, 26%);
+$v-dark-blue: hsl(229, 57%, 11%);
+
+@mixin display-flex($direction) {
+    display: flex;
+    flex-direction: $direction;
+}
+
+.nav-container{
+    @include display-flex(column);
+    background-color: $dark-blue;
+    padding: 3rem 2.5rem;
+    gap: 2rem;
+    border-radius: 10px;
+    border-top-right-radius: 35%;
+    transition: transform .5s;
+
+    .buttons-container {
+        display: flex;
+        justify-content: flex-start;
+        gap:1rem;
+        flex-wrap: wrap;
+        
+    .button {
+        background: $v-dark-blue;
+        padding: .8rem;
+        border-radius: 8px;
+
+    &:hover {
+        outline: 1px solid $pale-blue;
+    }
+    }    
+    }
+
+    &:hover {
+        transform:scale(1.03);
+    }
+}
