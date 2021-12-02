@@ -1,7 +1,7 @@
 **Welcome everybody to my little project! 👋**
 
 ## Live site 🚀
-- Live Site URL: [https://joadevy.github.io/Fylo-Data-Storage-Component/]
+- Live Site URL: [https://joadevy.github.io/FM-Fylo-Component/]
 
 ## Table of contents
   - [Live Site](#live-site)
